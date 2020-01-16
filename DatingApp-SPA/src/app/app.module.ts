@@ -19,6 +19,8 @@ import { appRoutes } from './routes';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberDetailResolver } from './_resolver/member-detail.resolver';
+import { MemberListResolver } from './_resolver/member-list.resolver';
 
 
 export function tokenGetter() {
@@ -55,7 +57,9 @@ export function tokenGetter() {
    providers: [
       AuthService,
       UserService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      MemberDetailResolver,
+      MemberListResolver
    ],
    bootstrap: [
       AppComponent
